@@ -1,8 +1,10 @@
 package leetcode1155;
 
 public class FindNumberOfDiceRolls {
+	// Dp solution
 	// Time: O(d * target * f)
     public int numRollsToTarget(int d, int f, int target) {
+    	// Need this to not overflow
     	// modulo 10^9 + 7
         int mod = (int)Math.pow(10, 9) + 7;
         
@@ -13,7 +15,7 @@ public class FindNumberOfDiceRolls {
         
         for(int i = 1; i <= d; i++){
             for(int j = 1; j <= target; j++){
-            	// When there is not enough faces in dice to get target
+            	// Dices with faces can not add to sum target
                 if(j > i * f){
                     break;
                 } else {
@@ -24,7 +26,6 @@ public class FindNumberOfDiceRolls {
                         dp[i][j] = (dp[i][j] + dp[i - 1][j - k]) % mod;
                     }
                 }
-                
             }
         }
         

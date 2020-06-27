@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		int d = 2;
 		
-		int f = 6;
+		int f = 4;
 		
 		int target = 7;
 		
